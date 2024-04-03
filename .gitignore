@@ -4,3 +4,8 @@
 # IDE ignore
 .idea/
 .vscode/
+
+
+# Added by cargo
+
+/target
