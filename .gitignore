@@ -1,11 +1,11 @@
 .env
 !.env.example
 
+logs/
+
 # IDE ignore
 .idea/
 .vscode/
 
-
-# Added by cargo
-
-/target
+# Cargo ignore
+target/
