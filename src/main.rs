@@ -1,17 +1,19 @@
-mod routes;
 mod api;
+mod routes;
 
-use log::{info};
+use log::{error, info};
 use crate::routes::{index, v1};
 use actix_web::{App, HttpServer, web};
 
 extern crate dotenv;
 
+static DEFAULT_ADDR: &str = "0.0.0.0";
+static DEFAULT_PORT: u16 = 8080;
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    log4rs::init_file("logging.yml", Default::default()).unwrap();
-
-    info!("Starting server at http://{}:{}", "0.0.0.0", 3000);
+    log4rs::init_file("logging.yml", Default::default())
+        .expect("Failed to initialize logging");
 
     let route = || {
         App::new()
@@ -19,5 +21,18 @@ async fn main() -> std::io::Result<()> {
             .service(web::scope("/v1").configure(v1))
     };
 
-    HttpServer::new(route).bind(("0.0.0.0", 3000))?.run().await
+    let addr: &str = DEFAULT_ADDR;
+    let port: u16 = DEFAULT_PORT;
+
+    let server = HttpServer::new(route);
+    match server.bind((addr, port)) {
+        Ok(server) => {
+            info!("Starting server at http://{}:{}", addr, port);
+            server.run().await
+        },
+        Err(e) => {
+            error!("Error: {}", e);
+            std::process::exit(1);
+        }
+    }
 }
