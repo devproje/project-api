@@ -8,7 +8,7 @@ use actix_web::{App, HttpServer, web};
 extern crate dotenv;
 
 static DEFAULT_ADDR: &str = "0.0.0.0";
-static DEFAULT_PORT: u16 = 8080;
+static DEFAULT_PORT: u16 = 3000;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
