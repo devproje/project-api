@@ -24,10 +24,12 @@ struct URLQuery {
 async fn handler(query: Query<URLQuery>) -> impl Responder {
     let start = Instant::now();
 
-    let mut rng = rand::thread_rng();
-    let mut area = rng.gen_range(1..=5);
+    let area: i32;
     match &query.area {
-        None => (),
+        None => {
+            let mut rng = rand::thread_rng();
+            area = rng.gen_range(1..=5)
+        },
         Some(x) => area = x.parse().unwrap()
     }
 
