@@ -8,5 +8,6 @@ services:
     ports:
       - "3000:3000"
     volumes:
+      - "./server.log:/opt/app/server.log"
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro

@@ -7,6 +7,6 @@ RUN apt install openssl libssl-dev pkg-config -y
 RUN cargo build --release
 
 RUN mv ./target/release/project-api /opt/app
-COPY ./logging.yml /opt/app
+COPY log4rs.yml /opt/app
 
 ENTRYPOINT ["/opt/app/project-api"]

@@ -12,7 +12,7 @@ static DEFAULT_PORT: u16 = 3000;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    log4rs::init_file("logging.yml", Default::default())
+    log4rs::init_file("log4rs.yml", Default::default())
         .expect("Failed to initialize logging");
 
     let route = || {
