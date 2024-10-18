@@ -27,8 +27,8 @@ export default function Home() {
 			}} />
 			<div className={styles.text_area}>
 				<h1 className={styles.name}>Project_IO</h1>
-				<p>🚀 Hello! I&apos;m Full-Stack developer Project_IO.</p>
-				<p>태어난지: {born}ms</p>
+				<p>🚀 Hello! I&apos;m Full-Stack Developer and DevOps.</p>
+				<p className={styles.born}>태어난지: {born}ms</p>
 			</div>
 
 			<button className={styles.profile_btn} onClick={ev => {

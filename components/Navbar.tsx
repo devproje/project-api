@@ -18,17 +18,29 @@ export function Navbar() {
 					}}>
 						<Image src={project} width={30} height={30} alt="" />
 					</a>
-					<h2>Project_IO&apos;s Website</h2>
+					<a href="/"><h2>Project_IO&apos;s Website</h2></a>
 				</div>
 
-				<div className={styles.action_row}></div>
+				<div className={styles.action_row}>
+					<Icon href="https://github.com/devproje" clazz={`${styles.first} bi-github`} />
+					<Icon href="https://git.wh64.net/devproje" clazz={"bi-git"} />
+					<Icon href="/contact" clazz={`${styles.last} bi-person-rolodex`} />
+				</div>
 			</nav>
 			<Menu menu={menu} setMenu={setMenu} />
 		</>
 	);
 }
 
-export function Menu({
+function Icon({ href, clazz }: { href: string, clazz: string }) {
+	return (
+		<a href={href}>
+			<i className={`bi ${clazz}`} />
+		</a>
+	);
+}
+
+function Menu({
 	menu,
 	setMenu
 }: {
@@ -49,12 +61,13 @@ export function Menu({
 			<div className={styles.entries}>
 				<Entry name="Home" href="/" />
 				<Entry name="Profile" href="/profile" />
+				<Entry name="Contact" href="/contact" />
 			</div>
 		</div>
 	);
 }
 
-export function Entry({ name, href }: { name: string, href: string }) {
+function Entry({ name, href }: { name: string, href: string }) {
 	return (
 		<a className={styles.entry} href={href}>{name}</a>
 	);

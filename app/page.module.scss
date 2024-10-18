@@ -27,13 +27,18 @@
 }
 
 .text_area {
-	padding: 1.5rem 0;
 	display: flex;
+	padding: 1.5rem 0;
 	place-items: center;
 	flex-direction: column;
+	justify-content: center;
 
 	h1 {
 		padding-bottom: 10px;
+	}
+
+	.born {
+		padding: 2px 0;
 	}
 }
 

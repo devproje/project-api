@@ -32,6 +32,17 @@
 }
 
 .action_row {
+	.first {
+		margin-right: 10px;
+	}
+
+	.last {
+		margin-left: 10px;
+	}
+
+	.entry {
+		margin: 0 10px;
+	}
 }
 
 .menu {
