@@ -1,0 +1,88 @@
+.no {
+	hr {
+		width: 100%;
+		margin: 1.5rem;
+	}
+}
+
+.repos {
+	gap: 32px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.repo {
+	width: 320px;
+	border: 1px solid var(--foreground);
+	border-radius: 15px;
+	padding: 2rem 1.5rem;
+}
+
+.lang_indicator {
+	width: 100%;
+	display: flex;
+	margin-top: 10px;
+}
+
+.lang {
+	width: 24px;
+	height: 24px;
+	border-radius: 100%;
+}
+
+.any {
+	background-color: #000000;
+}
+
+.c {
+	background-color: #555555;
+}
+
+.golang {
+	background-color: #00ADD8;
+}
+
+.java {
+	background-color: #b07219;
+}
+
+.kotlin {
+	background-color: #A97BFF;
+}
+
+.python {
+	background-color: #3572A5;
+}
+
+.javascript {
+	background-color: #f1e05a;
+}
+
+.typescript {
+	background-color: #3178c6;
+}
+
+.makefile {
+	background-color: #427819;
+}
+
+.bash {
+	background-color: #89e051;
+}
+
+.sql {
+	background-color: #e38c00;
+}
+
+.scala {
+	background-color: #c22d40;
+}
+
+.groovy {
+	background-color: #4298b8;
+}
+
+.rust {
+	background-color: #dea584;
+}

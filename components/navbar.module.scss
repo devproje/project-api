@@ -1,0 +1,93 @@
+.nav {
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+
+	& > .menu_btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition-duration: 300ms;
+		
+		&:active {
+			transform: scale(0.9);
+			-webkit-transform: scale(0.9);
+			-moz-transform: scale(0.9);
+			-o-transform: scale(0.9);
+			transition-duration: 300ms;
+		}
+	}
+
+	h2 {
+		margin: 0 10px;
+	}
+}
+
+.action_row {
+}
+
+.menu {
+	top: 0;
+	z-index: 1;
+	left: -300px;
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	display: inline-flex;
+	flex-direction: column;
+	backdrop-filter: blur(7px);
+	transition-duration: 300ms;
+	justify-content: flex-start;
+	background-color: rgba(255, 255, 255, 0.025);
+
+	@media (max-width: 760px) {
+		left: -100%;
+		width: 100%;
+	}
+
+	.title {
+		width: 100%;
+		height: 40px;
+		display: flex;
+		font-size: 21pt;
+		padding: 10px;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	.entries {
+		display: inline-flex;
+		flex-direction: column;
+
+		.entry {
+			width: 100%;
+			display: flex;
+			padding: 10px;
+			transition-duration: 300ms;
+			justify-content: flex-start;
+
+			&:hover {
+				transition-duration: 300ms;
+				background-color: rgba(50, 50, 50, 0.7);
+			}
+
+			&:active {
+				transition-duration: 300ms;
+				background-color: rgba(50, 50, 50, 0.5);
+			}
+		}
+	}
+
+	&.open {
+		left: 0 !important;
+		transition-duration: 300ms;
+	}
+}

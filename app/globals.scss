@@ -1,0 +1,131 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--background: #ffffff;
+	--foreground: #213547;
+
+	--btn: #dedede;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #242424;
+		--foreground: #ededed;
+
+		--btn: #1a1a1a;
+	}
+}
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	font-family: "Pretendard", serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@keyframes load {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	animation: load 0.5s ease-in-out alternate;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	border-radius: 8px;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: var(--btn);
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: border-color 0.25s;
+
+	&:hover {
+		border-color: var(--foreground);
+	}
+
+	&:focus,
+	&:focus-visible {
+		outline: 4px auto -webkit-focus-ring-color;
+	}
+}
+
+pre,
+code {
+	font-size: 12pt;
+	font-family: "Jetbrains Mono", monospace;
+}
+
+.view {
+	padding: 0 24rem;
+	
+	@media (min-width: 330px) and (max-width: 480px) {
+		padding: 0 10px;
+	}
+
+	@media (min-width: 481px) and (max-width: 760px) {
+		padding: 0 2.5rem;
+	}
+
+	@media (min-width: 761px) and (max-width: 960px) {
+		padding: 0 6rem;
+	}
+
+	@media (min-width: 961px) and (max-width: 1200px) {
+		padding: 0 12rem;
+	}
+
+	@media (min-width: 1201px) and (max-width: 1600px) {
+		padding: 0 18rem;
+	}
+
+}
+
+.page {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}

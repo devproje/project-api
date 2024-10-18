@@ -1,0 +1,42 @@
+.logo {
+	border-radius: 100%;
+	animation: rotate 2s infinite linear;
+
+	&:hover {
+		animation: none;
+	}
+
+	@keyframes rotate {
+		from {
+			-webkit-animation: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+	
+		to {
+			-webkit-animation: rotate(360deg);
+			-o-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+}
+
+.name {
+	margin: 0;
+	padding: 0;
+}
+
+.text_area {
+	padding: 1.5rem 0;
+	display: flex;
+	place-items: center;
+	flex-direction: column;
+
+	h1 {
+		padding-bottom: 10px;
+	}
+}
+
+.profile_btn {
+	margin: 0.25em 0;
+}
