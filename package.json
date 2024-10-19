@@ -9,6 +9,11 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@opentelemetry/exporter-trace-otlp-http": "^0.53.0",
+		"@opentelemetry/resources": "^1.26.0",
+		"@opentelemetry/sdk-node": "^0.53.0",
+		"@opentelemetry/sdk-trace-node": "^1.26.0",
+		"@opentelemetry/semantic-conventions": "^1.27.0",
 		"@vercel/otel": "^1.10.0",
 		"bootstrap-icons": "^1.11.3",
 		"next": "14.2.15",
