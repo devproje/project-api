@@ -9,4 +9,4 @@ RUN pnpm install
 RUN pnpm build
 
 # Debug Only
-ENTRYPOINT ["pnpm", "-C", "/opt/website", "start"]
+ENTRYPOINT ["pnpm", "-C", "/opt/website", "start", "--hostname", "0.0.0.0"]
