@@ -1,9 +1,11 @@
-import { NodeSDK } from "@opentelemetry/sdk-node"
-import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http"
-import { SimpleSpanProcessor } from "@opentelemetry/sdk-trace-node"
+import { registerOTel } from "@vercel/otel";
+import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http";
+import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-node";
 
-const sdk = new NodeSDK({
-	spanProcessors: [new SimpleSpanProcessor(new OTLPTraceExporter())]
-});
+const spanProcessors = [new BatchSpanProcessor(new OTLPTraceExporter())];
 
-sdk.start();
+export async function register() {
+	if (process.env.NEXT_RUNTIME === "nodejs") {
+		registerOTel({ spanProcessors: spanProcessors });
+	}
+}
