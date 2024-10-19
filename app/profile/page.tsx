@@ -1,6 +1,5 @@
-// import fs from "fs";
-// import { Prof } from "./Profile";
-import styles from "./profile.module.scss";
+import fs from "fs";
+import { Prof } from "./Profile";
 
 export type Project = {
 	name: string;
@@ -9,22 +8,24 @@ export type Project = {
 	url: string;
 };
 
+export type Histories = {
+	name: string;
+	history: History[];
+};
+
+export type History = {
+	name: string;
+	date: string;
+}
+
 export type Profile = {
 	projects: Project[];
+	histories: Histories[];
 };
 
 export default function Profile() {
-	// const raw = fs.readFileSync("profile.json");
-	// const data: Profile = JSON.parse(raw.toString());
+	const raw = fs.readFileSync("data.json");
+	const data: Profile = JSON.parse(raw.toString());
 
-	// return <Prof data={data} />;
-	return (
-		<main className={`view page center ${styles.no}`}>
-			<h1>Comming Soon!</h1>
-			<p>Service is not provided yet.</p>
-			<hr />
-
-			<a href="/">Back to Website</a>
-		</main>
-	);
+	return <Prof data={data} />;
 }

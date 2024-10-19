@@ -1,14 +1,60 @@
 "use client";
 
+import Image from "next/image";
 import { Profile } from "./page";
+import project from "@/app/PROJECTU.png";
 import styles from "./profile.module.scss";
 
 export function Prof({ data }: { data: Profile }) {
 	return (
 		<main className="view page center">
-			<div className={`${styles.repos}`}>
-				<h2>Projects</h2>
+			<div className={styles.profile}>
+				<div className={styles.info}>
+					<Image className={styles.image} src={project} width={256} height={256} alt="" />
+					<h1>Project_IO</h1>
+					<h4>(Real Name: Wonhyeok Kim)</h4>
+					<p>Full-Stack Developer & DevOps</p>
+
+					<div className={styles.heap}>
+						<b>🏢 Company</b>
+						<ul className={styles.company}>
+							<li>동양미래대학교 컴퓨터정보공학과 23학번</li>
+							<li>Project Playground</li>
+						</ul>
+					</div>
+				</div>
+				<div className={styles.view}>
+					<Project data={data} />
+					<History data={data} />
+					<Contact />
+				</div>
+			</div>
+		</main>
+	);
+}
+
+function Contact() {
+	return (
+		<>
+			<div className={styles.title}>
+				<h2>📲 Contact</h2>
 				<hr />
+			</div>
+			<div className={styles.contact}>
+				<a href="/contact">Go to Contact Page</a>
+			</div>
+		</>
+	)
+}
+
+function Project({ data }: { data: Profile }) {
+	return (
+		<>
+			<div className={styles.title}>
+				<h2>📝 Project</h2>
+				<hr />
+			</div>
+			<div className={styles.repos}>
 				{data.projects.map((project, n) => {
 					return (
 						<a className={styles.repo} href={project.url} key={n}>
@@ -24,7 +70,37 @@ export function Prof({ data }: { data: Profile }) {
 					);
 				})}
 			</div>
-		</main>
+		</>
+	);
+}
+
+function History({ data }: { data: Profile }) {
+	return (
+		<>
+			<div className={styles.title}>
+				<h2>📜 History</h2>
+				<hr />
+			</div>
+
+			<div className={styles.history} id="history">
+				{data.histories.map((h, n) => {
+					return (
+						<div key={n} className={styles.histories}>
+							<h3>{h.name}</h3>
+							<ul className={styles.history_ref}>
+								{h.history.map((d, n) => {
+									return (
+										<li key={n}>
+											<p>({d.date}) {d.name}</p>
+										</li>
+									);
+								})}
+							</ul>
+						</div>
+					);
+				})}
+			</div>
+		</>
 	);
 }
 

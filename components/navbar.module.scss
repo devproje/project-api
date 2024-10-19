@@ -64,6 +64,10 @@
 		width: 100%;
 	}
 
+	h2 {
+		margin: 0.2em 10px;
+	}
+
 	.title {
 		width: 100%;
 		height: 40px;
@@ -77,6 +81,7 @@
 	.entries {
 		display: inline-flex;
 		flex-direction: column;
+		margin-bottom: 10px;
 
 		.entry {
 			width: 100%;
@@ -101,4 +106,11 @@
 		left: 0 !important;
 		transition-duration: 300ms;
 	}
+}
+
+.footer {
+	width: 100%;
+	margin: 2em 0;
+	display: flex;
+	justify-content: center;
 }

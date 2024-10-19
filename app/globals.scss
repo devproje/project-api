@@ -88,7 +88,7 @@ code {
 }
 
 .view {
-	padding: 0 24rem;
+	padding: 0 18rem;
 	
 	@media (min-width: 330px) and (max-width: 480px) {
 		padding: 0 10px;
@@ -107,7 +107,7 @@ code {
 	}
 
 	@media (min-width: 1201px) and (max-width: 1600px) {
-		padding: 0 18rem;
+		padding: 0 16rem;
 	}
 
 }

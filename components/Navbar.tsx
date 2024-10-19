@@ -57,11 +57,20 @@ function Menu({
 					<i className="bi bi-x" />
 				</a>
 			</div>
-
+			
+			<h2>Website</h2>
 			<div className={styles.entries}>
 				<Entry name="Home" href="/" />
 				<Entry name="Profile" href="/profile" />
 				<Entry name="Contact" href="/contact" />
+			</div>
+
+			<h2>Services</h2>
+			<div className={styles.entries}>
+				<Entry name="WSERVER" href="https://wh64.net" />
+				<Entry name="WSERVER Forgejo" href="https://git.wh64.net" />
+				<Entry name="Project Central" href="https://repo.wh64.net" />
+				<Entry name="TeamCity" href="https://ci.wh64.net" />
 			</div>
 		</div>
 	);
