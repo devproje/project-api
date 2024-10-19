@@ -9,11 +9,13 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@vercel/otel": "^1.10.0",
 		"bootstrap-icons": "^1.11.3",
 		"next": "14.2.15",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"sass": "^1.79.5"
+		"sass": "^1.79.5",
+		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
 		"@types/node": "^20.16.11",
