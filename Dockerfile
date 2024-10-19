@@ -5,6 +5,7 @@ WORKDIR /opt/website
 COPY . .
 
 RUN npm install -g pnpm
+
 RUN pnpm install
 RUN pnpm build
 
