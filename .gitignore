@@ -3,6 +3,10 @@
 bak/
 profile.json
 
+.env
+.env.*
+!.env.example
+
 # dependencies
 /node_modules
 /.pnp
