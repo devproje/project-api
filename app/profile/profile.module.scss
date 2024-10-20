@@ -197,8 +197,8 @@
 		position: absolute;
 		color: var(--foreground);
 		transition: opacity 0.5s;
-		background-color: var(--background);
-		border: solid 1px var(--background);
+		background-color: var(--tooltip);
+		border: solid 1px var(--tooltip);
 	}
 	
 	& .tip_content::after {
@@ -209,7 +209,7 @@
 		margin-left: -5px;
 		border-width: 5px;
 		border-style: solid;
-		border-color: var(--background) transparent transparent transparent;
+		border-color: var(--tooltip) transparent transparent transparent;
 	}
 
 	&:hover .tip_content {
