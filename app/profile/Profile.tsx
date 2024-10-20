@@ -74,6 +74,37 @@ function Project({ data }: { data: Profile }) {
 	);
 }
 
+function Tooltip({ type }: { type: string }) {
+	let render;
+	const name = <p className={styles.tip_content}>{type.charAt(0).toUpperCase() + type.substring(1, type.length)}</p>;
+
+	switch (type) {
+	case "person":
+		render = <i className={`bi bi-person ${styles.tooltip}`}>{name}</i>;
+		return;
+	case "school":
+		render = <i className={`bi bi-building-check ${styles.tooltip}`}>{name}</i>;
+		break
+	case "license":
+		render = <i className={`bi bi-patch-check ${styles.tooltip}`}>{name}</i>;
+		break;
+	case "conference":
+		render = <i className={`bi bi-code-slash ${styles.tooltip}`}>{name}</i>;
+		break;
+	case "competition":
+		render = <i className={`bi bi-braces ${styles.tooltip}`}>{name}</i>;
+		break;
+	default:
+		render = <i className={`${styles.verified}`} />;
+	}
+
+	return (
+		<>
+			{render}
+		</>
+	);
+}
+
 function History({ data }: { data: Profile }) {
 	return (
 		<>
@@ -87,15 +118,17 @@ function History({ data }: { data: Profile }) {
 					return (
 						<div key={n} className={styles.histories}>
 							<h3>{h.name}</h3>
-							<ul className={styles.history_ref}>
+							<div className={styles.history_ref}>
 								{h.history.map((d, n) => {
 									return (
-										<li key={n}>
-											<p>({d.date}) {d.name}</p>
-										</li>
+										<div className={styles.history_item} key={n}>
+											<Tooltip type={d.type} />
+											<code>{d.date}</code>
+											<span>{d.name}</span>
+										</div>
 									);
 								})}
-							</ul>
+							</div>
 						</div>
 					);
 				})}
