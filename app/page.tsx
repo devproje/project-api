@@ -5,6 +5,7 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 
 import projectu from "./PROJECTU.png";
+import { Button } from "@mui/joy";
 
 export default function Home() {
 	const [born, setBorn] = useState("N/A");
@@ -31,10 +32,10 @@ export default function Home() {
 				<p className={styles.born}>태어난지: {born}ms</p>
 			</div>
 
-			<button className={styles.profile_btn} onClick={ev => {
+			<Button sx={{ fontWeight: 400 }} onClick={ev => {
 				ev.preventDefault();
 				window.location.href = "/profile";
-			}}>Get Started</button>
+			}}>Get Started</Button>
 		</main>
 	);
 }

@@ -71,6 +71,7 @@ function Menu({
 				<Entry name="WSERVER Forgejo" href="https://git.wh64.net" />
 				<Entry name="Project Central" href="https://repo.wh64.net" />
 				<Entry name="TeamCity" href="https://ci.wh64.net" />
+				<Entry name="WSERVER Wakapi" href="https://wakatime.wh64.net" />
 			</div>
 		</div>
 	);
