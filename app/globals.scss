@@ -9,20 +9,14 @@
 }
 
 :root {
-	--background: #ffffff;
+	--background: #eeeeee;
 	--foreground: #213547;
-
-	--btn: #dedede;
-	--tooltip: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background: #242424;
+		--background: #1a1a1a;
 		--foreground: #ededed;
-
-		--btn: #1a1a1a;
-		--tooltip: #000000;
 	}
 }
 
@@ -38,6 +32,7 @@ body {
 	font-family: "Pretendard", serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	
 	@keyframes load {
 		from {
 			opacity: 0;
@@ -62,51 +57,10 @@ a {
 	text-decoration: none;
 }
 
-button {
-	transition-duration: 0.3s;
-}
-
 pre,
 code {
 	font-size: 12pt;
 	font-family: "Jetbrains Mono", monospace;
-}
-
-.view {
-	padding: 0 15rem;
-	
-	@media (min-width: 330px) and (max-width: 480px) {
-		padding: 0 10px;
-	}
-
-	@media (min-width: 481px) and (max-width: 760px) {
-		padding: 0 2rem;
-	}
-
-	@media (min-width: 761px) and (max-width: 960px) {
-		padding: 0 4rem;
-	}
-
-	@media (min-width: 961px) and (max-width: 1200px) {
-		padding: 0 8rem;
-	}
-
-	@media (min-width: 1201px) and (max-width: 1600px) {
-		padding: 0 12rem;
-	}
-
-}
-
-.page {
-	padding-top: 2.5rem;
-	padding-bottom: 2.5rem;
-}
-
-.center {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
 }
 
 @media (prefers-color-scheme: dark) {

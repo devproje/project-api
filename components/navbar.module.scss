@@ -1,116 +1,73 @@
 .nav {
+	width: 100%;
 	height: 65px;
 	display: flex;
 	align-items: center;
+	flex-direction: row;
 	justify-content: space-between;
 }
 
 .logo {
-	margin: 0;
-	padding: 0;
 	display: flex;
 	align-items: center;
+	flex-direction: row;
+	justify-content: center;
 
-	& > .menu_btn {
+	.menu_btn {
+		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		transition-duration: 300ms;
-		
-		&:active {
-			transform: scale(0.9);
-			-webkit-transform: scale(0.9);
-			-moz-transform: scale(0.9);
-			-o-transform: scale(0.9);
-			transition-duration: 300ms;
-		}
 	}
 
-	h2 {
-		margin: 0 10px;
+	.title {
+		margin: 7px;
 	}
 }
 
 .action_row {
-	.first {
-		margin-right: 10px;
+	display: flex;
+	width: fit-content;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	.heap {
+		width: 10px;
+	}
+}
+
+.action_icon {
+	transition-duration: 0.3s;
+
+	i {
+		font-size: 15pt;
+		transition-duration: 0.3s;
 	}
 
-	.last {
-		margin-left: 10px;
-	}
+	&:hover {
+		transition-duration: 0.3s;
 
-	.entry {
-		margin: 0 10px;
+		i {
+			transition-duration: 0.3s;
+			color: rgba(255, 255, 255, 0.55);
+		}
 	}
 }
 
 .menu {
-	top: 0;
-	z-index: 1;
-	left: -300px;
-	width: 300px;
-	height: 100%;
-	position: fixed;
-	display: inline-flex;
-	flex-direction: column;
-	backdrop-filter: blur(7px);
-	transition-duration: 300ms;
-	justify-content: flex-start;
-	background-color: rgba(255, 255, 255, 0.025);
-
-	@media (max-width: 760px) {
-		left: -100%;
-		width: 100%;
-	}
-
-	h2 {
-		margin: 0.2em 10px;
-	}
-
-	.title {
-		width: 100%;
-		height: 40px;
-		display: flex;
-		font-size: 21pt;
-		padding: 10px;
-		align-items: center;
-		justify-content: flex-end;
-	}
-
-	.entries {
-		display: inline-flex;
-		flex-direction: column;
-		margin-bottom: 10px;
-
-		.entry {
-			width: 100%;
-			display: flex;
-			padding: 10px;
-			transition-duration: 300ms;
-			justify-content: flex-start;
-
-			&:hover {
-				transition-duration: 300ms;
-				background-color: rgba(50, 50, 50, 0.7);
-			}
-
-			&:active {
-				transition-duration: 300ms;
-				background-color: rgba(50, 50, 50, 0.5);
-			}
-		}
-	}
-
-	&.open {
-		left: 0 !important;
-		transition-duration: 300ms;
-	}
-}
-
-.footer {
 	width: 100%;
-	margin: 2em 0;
+	height: 100%;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	color: var(--foreground);
+	background-color: var(--background);
+
+	.menu_title {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
 }

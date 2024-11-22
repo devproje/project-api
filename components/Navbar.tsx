@@ -1,84 +1,63 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import project from "@/app/project.png";
 import styles from "./navbar.module.scss";
+import { Container, Drawer } from "@mui/joy";
+import { useMenu } from "@/stores/menu.state";
+import { CustomButton } from "./CustomButton";
 
 export function Navbar() {
-	const [menu, setMenu] = useState(false);
+	const menu = useMenu();
 
 	return (
-		<>
-			<nav className={`view ${styles.nav}`}>
-				<div className={styles.logo}>
-					<a className={styles.menu_btn} onClick={ev => {
-						ev.preventDefault();
-						setMenu(!menu);
-					}}>
-						<Image src={project} width={30} height={30} alt="" />
-					</a>
-					<a href="/"><h2>Project_IO&apos;s Website</h2></a>
-				</div>
-
-				<div className={styles.action_row}>
-					<Icon href="https://github.com/devproje" clazz={`${styles.first} bi-github`} />
-					<Icon href="https://git.wh64.net/devproje" clazz={"bi-git"} />
-					<Icon href="/contact" clazz={`${styles.last} bi-person-rolodex`} />
-				</div>
-			</nav>
-			<Menu menu={menu} setMenu={setMenu} />
-		</>
-	);
-}
-
-function Icon({ href, clazz }: { href: string, clazz: string }) {
-	return (
-		<a href={href}>
-			<i className={`bi ${clazz}`} />
-		</a>
-	);
-}
-
-function Menu({
-	menu,
-	setMenu
-}: {
-	menu: boolean,
-	setMenu: React.Dispatch<React.SetStateAction<boolean>>
-}) {
-	return (
-		<div className={`${styles.menu} ${menu ? styles.open : ""}`}>
-			<div className={styles.title}>
-				<a onClick={ev => {
+		<Container className={styles.nav}>
+			<div className={styles.logo}>
+				<a className={styles.menu_btn} onClick={ev => {
 					ev.preventDefault();
-					setMenu(false);
+					menu.setOpen(true);
 				}}>
-					<i className="bi bi-x" />
+					<Image src={project} width={30} height={30} alt="" />
 				</a>
-			</div>
-			
-			<h2>Website</h2>
-			<div className={styles.entries}>
-				<Entry name="Home" href="/" />
-				<Entry name="Profile" href="/profile" />
-				<Entry name="Contact" href="/contact" />
+				
+				<a className={styles.title} href="/"><h2>Project_IO&apos;s Website</h2></a>
 			</div>
 
-			<h2>Services</h2>
-			<div className={styles.entries}>
-				<Entry name="WSERVER" href="https://wh64.net" />
-				<Entry name="WSERVER Forgejo" href="https://git.wh64.net" />
-				<Entry name="Project Central" href="https://repo.wh64.net" />
-				<Entry name="TeamCity" href="https://ci.wh64.net" />
-				<Entry name="WSERVER Wakapi" href="https://wakatime.wh64.net" />
+			<div className={styles.action_row}>
+				<Icon href="https://github.com/devproje" clazz={"bi-github"} />
+				<div className={styles.heap}></div>
+				<Icon href="https://git.wh64.net/devproje" clazz={"bi-git"} />
 			</div>
-		</div>
+			<Menu />
+		</Container>
 	);
 }
 
-function Entry({ name, href }: { name: string, href: string }) {
+export function Menu() {
+	const menu = useMenu();
+
 	return (
-		<a className={styles.entry} href={href}>{name}</a>
+		<Drawer open={menu.open} sx={{
+			width: "300px",
+			color: "var(--foreground)",
+			backgroundColor: "var(--background)",
+		}}>
+			<div className={styles.menu}>
+				<div className={styles.menu_title}>
+					<CustomButton icon="bi bi-x-lg" onClick={ev => {
+						ev.preventDefault();
+						menu.setOpen(false);
+					}} />
+				</div>
+			</div>
+		</Drawer>
+	)
+}
+
+export function Icon({ href, clazz }: { href: string; clazz: string }) {
+	return (
+		<a href={href} className={styles.action_icon}>
+			<i className={clazz} />
+		</a>
 	);
 }
