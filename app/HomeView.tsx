@@ -20,7 +20,7 @@ export function HomeView() {
 	});
 
 	return (
-		<div className={styles.content}>
+		<div className={`${styles.content} ${styles.content_center}`}>
 			<Image className={styles.logo} src={projectu} width={300} height={300} alt="" onClick={ev => {
 				ev.preventDefault();
 				alert("Hello, World!");
