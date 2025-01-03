@@ -1,5 +1,6 @@
 plugins {
 	java
+	kotlin("jvm") version "2.1.0"
 	id("org.springframework.boot") version "3.4.1"
 	id("org.graalvm.buildtools.native") version "0.10.4"
 	id("io.spring.dependency-management") version "1.1.7"
@@ -19,6 +20,7 @@ repositories {
 }
 
 dependencies {
+	implementation("com.google.code.gson:gson:2.11.0")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	runtimeOnly("org.postgresql:postgresql")

@@ -7,6 +7,8 @@ build/
 
 ### Ignore Items ###
 bak/
+config.json
+!.config.sample.json
 
 ### STS ###
 .apt_generated
