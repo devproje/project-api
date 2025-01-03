@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Header Fragment</title>
+</head>
+<body>
+<header th:fragment="header">
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container">
+			<div class="navbar-header">
+				<a th:href="@{/}" class="navbar-brand">
+					<img src="/static/project.png" width="25" height="25" alt="" />
+					<span><b>Project_IO's Website</b></span>
+				</a>
+			</div>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="navbar-nav me-auto mb-2 mb-lg-0">
+					<div class="nav-item">
+						<a class="nav-link" th:href="@{/}">Home</a>
+					</div>
+					<div class="nav-item">
+						<a class="nav-link" th:href="@{/history}">History</a>
+					</div>
+				</div>
+
+				<span class="navbar-text">
+					<a href="https://github.com/devproje">
+						<i class="bi bi-github"></i>
+					</a>
+					<span class="nav-heap"></span>
+					<a href="https://git.wh64.net/devproje">
+						<i class="bi bi-git"></i>
+					</a>
+					<span class="nav-heap"></span>
+					<a href="https://repo.wh64.net">
+						<i class="bi bi-database"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+	</nav>
+</header>
+</body>
+</html>
