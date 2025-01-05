@@ -1,35 +1,40 @@
+
 plugins {
-	java
-	kotlin("jvm") version "2.1.0"
-	id("org.springframework.boot") version "3.4.1"
-	id("org.graalvm.buildtools.native") version "0.10.4"
-	id("io.spring.dependency-management") version "1.1.7"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ktor)
+    alias(libs.plugins.kotlin.plugin.serialization)
 }
 
 group = "net.projecttl"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
+application {
+    mainClass.set("net.projecttl.website.ApplicationKt")
+
+    val isDevelopment: Boolean = project.ext.has("development")
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation("com.google.code.gson:gson:2.11.0")
-	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	runtimeOnly("org.postgresql:postgresql")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
-
-tasks{
-	withType<Test> {
-		useJUnitPlatform()
-	}
+    implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.websockets)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.server.content.negotiation)
+    implementation(libs.postgresql)
+    implementation(libs.exposed.core)
+    implementation(libs.exposed.jdbc)
+    implementation(libs.ktor.server.thymeleaf)
+    implementation(libs.ktor.server.swagger)
+    implementation(libs.ktor.server.cors)
+    implementation(libs.ktor.server.host.common)
+    implementation(libs.ktor.server.status.pages)
+    implementation(libs.ktor.server.auth)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.logback.classic)
+    testImplementation(libs.ktor.server.test.host)
+    testImplementation(libs.kotlin.test.junit)
 }

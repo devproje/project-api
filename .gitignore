@@ -1,14 +1,11 @@
-HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### Ignore Items ###
+### Ignore Files ###
 bak/
-config.json
-!.config.sample.json
 
 ### STS ###
 .apt_generated
