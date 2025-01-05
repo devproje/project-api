@@ -1,10 +1,10 @@
-
 [versions]
 exposed-version = "0.57.0"
 kotlin-version = "2.1.0"
 ktor-version = "3.0.3"
 logback-version = "1.5.15"
 postgres-version = "42.7.4"
+#graalvm-native-version = "0.9.8"
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor-version" }
@@ -29,3 +29,4 @@ kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor-version" }
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }
+#graalvm-build-native = { id = "org.graalvm.buildtools.native", version.ref = "graalvm-native-version" }
