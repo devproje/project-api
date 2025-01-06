@@ -33,13 +33,23 @@ dependencies {
     implementation(libs.ktor.server.host.common)
     implementation(libs.ktor.server.status.pages)
     implementation(libs.ktor.server.auth)
-    implementation(libs.ktor.server.cio)
+    implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
 }
 
 tasks {
+    processResources {
+        val patterns = listOf("**/*.yaml", "default.properties")
+
+        patterns.forEach { pattern ->
+            filesMatching(pattern) {
+                expand(project.properties)
+            }
+        }
+    }
+
     shadowJar {
         archiveBaseName.set(rootProject.name)
         archiveClassifier.set("")

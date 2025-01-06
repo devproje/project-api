@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Info Fragments</title>
+</head>
+<body>
+<div id="info" class="container center-page" th:fragment="headers">
+	<div class="info-row">
+		<img class="info-header-logo" src="/static/PROJECTU.png" alt="" />
+
+		<div>
+			<h1 class="info-header-title">Wonhyeok Kim</h1>
+			<p class="info-header-text">Fullstack Developer and DevOps Engineer</p>
+			<ul>
+				<li>🧑 코딩을 하는 평범한 대학생 <b>Project_IO</b> 입니다.</li>
+				<li>🏫 동양미래대학교 컴퓨터정보공학과 23학번 재학중</li>
+				<li>⚡ HTML is programming language!</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="skills" class="container page" th:fragment="skills">
+	<h2>Skills</h2>
+	<p>아래의 아이콘 들은 제가 사용 하거나 공부 하고 있는 항목들 이에요!</p>
+	<hr class="sk-line" />
+
+	<div class="skills">
+		<div class="skills-container">
+			<h5>Languages</h5>
+			<div class="skill-row">
+				<div class="skill-cell" th:each="lang : ${languages}">
+					<a class="sk-icon" th:href="${lang.url}">
+						<th:block th:if="${lang.colored}">
+							<i th:class="${lang.icon + ' colored'}"></i>
+						</th:block>
+						<th:block th:unless="${lang.colored}">
+							<i th:class="${lang.icon}"></i>
+						</th:block>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="skills-container">
+			<h5>Frameworks</h5>
+			<div class="skill-row">
+				<div class="skill-cell" th:each="fw : ${frameworks}">
+					<a class="sk-icon" th:href="${fw.url}">
+						<th:block th:if="${fw.colored}">
+							<i th:class="${fw.icon + ' colored'}"></i>
+						</th:block>
+						<th:block th:unless="${fw.colored}">
+							<i th:class="${fw.icon}"></i>
+						</th:block>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="skills-container">
+			<h5>IDE or DevOps</h5>
+			<div class="skill-row">
+				<div class="skill-cell" th:each="do : ${devops}">
+					<a class="sk-icon" th:href="${do.url}">
+						<th:block th:if="${do.colored}">
+							<i th:class="${do.icon + ' colored'}"></i>
+						</th:block>
+						<th:block th:unless="${do.colored}">
+							<i th:class="${do.icon}"></i>
+						</th:block>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="projects" class="container page" th:fragment="projects">
+	<h2>Projects</h2>
+	<hr class="sk-line" />
+</div>
+
+<div id="history" class="container page" th:fragment="history">
+<!--	<h2>History</h2>-->
+<!--	<hr class="sk-line" />-->
+
+	<div th:replace="~{fragments/info.fragments::no-conf}"></div>
+</div>
+
+<div class="navigator-item" th:fragment="navigator">
+	<div class="btn-group" role="group">
+		<a type="button" class="btn btn-secondary" href="#top">
+			<i class="bi bi-arrow-bar-up"></i>
+		</a>
+		<a type="button" class="btn btn-secondary" href="#info">
+			<span>Info</span>
+		</a>
+		<a type="button" class="btn btn-secondary" href="#skills">
+			<span>Skills</span>
+		</a>
+		<a type="button" class="btn btn-secondary" href="#projects">
+			<span>Projects</span>
+		</a>
+		<a type="button" class="btn btn-secondary" href="#history">
+			<span>History</span>
+		</a>
+	</div>
+</div>
+
+<div class="container" th:fragment="no-conf">
+	<div class="center-page">
+		<h1>Coming soon!</h1>
+		<p>This service is not configured.</p>
+
+		<a class="btn btn-primary" href="/">Go to home</a>
+	</div>
+</div>
+</body>
+</html>

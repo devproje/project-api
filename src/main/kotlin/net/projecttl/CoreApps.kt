@@ -1,8 +1,8 @@
 package net.projecttl
 
 import io.ktor.server.application.*
-import io.ktor.server.cio.*
 import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 import net.projecttl.routes.apiRoutes
 import net.projecttl.routes.viewRoutes
 import org.jetbrains.exposed.sql.Database
@@ -18,7 +18,9 @@ lateinit var logger: Logger
 	private set
 
 fun main() {
-	logger = LoggerFactory.getLogger(CoreApplication::class.java.getName())
+	logger = LoggerFactory.getLogger(CoreApps::class.java.getName())
+	println("Project API ${Config.version} - Created by Project_IO")
+
 	database = Database.connect(
 		url = "jdbc:postgresql://${Config.database_url}/${Config.database_name}",
 		driver = "org.postgresql.Driver",
@@ -30,16 +32,21 @@ fun main() {
 		transaction(database) {
 			exec("select 1;") {
 				if (it.next())
-					logger.info("connected to database ${Config.database_url}/${Config.database_name}")
+					logger.info("Connected database to ${Config.database_url}/${Config.database_name}")
 			}
 		}
 	} catch (ex: Exception) {
-		logger.error("connect failed to database ${Config.database_url}/${Config.database_name}", ex)
+		logger.error("Connect failed database to ${Config.database_url}/${Config.database_name}", ex)
 		exitProcess(1)
 	}
 
+	val port = try {
+		Config.port.toInt()
+	} catch (ex: Exception) {
+		3000
+	}
 
-    embeddedServer(CIO, port = 8080, host = "0.0.0.0", module = Application::module)
+    embeddedServer(Netty, port = port, host = "0.0.0.0", module = Application::module)
         .start(wait = true)
 }
 
@@ -48,4 +55,4 @@ fun Application.module() {
 	viewRoutes()
 }
 
-class CoreApplication
+class CoreApps

@@ -11,16 +11,18 @@
 }
 
 :root {
-    --background: #eeeeee;
-    --foreground: #111111;
+    --background: #1a1a1a;
+    --foreground: #ededed;
+    --navigator-color: #444444;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #1a1a1a;
-        --foreground: #ededed;
-    }
-}
+/*@media (prefers-color-scheme: light) {*/
+/*    :root {*/
+/*        --background: #eeeeee;*/
+/*        --foreground: #111111;*/
+/*        --navigator-color: #bbbbbb */
+/*    }*/
+/*}*/
 
 html,
 body {
@@ -71,11 +73,11 @@ code {
     justify-content: center;
 }
 
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-}
+/*@media (prefers-color-scheme: light) {*/
+/*    html {*/
+/*        color-scheme: light;*/
+/*    }*/
+/*}*/
 
 @keyframes load {
     from {
