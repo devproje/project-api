@@ -6,6 +6,8 @@ build/
 
 ### Ignore Files ###
 bak/
+config.properties
+!config.sample.properties
 
 ### STS ###
 .apt_generated

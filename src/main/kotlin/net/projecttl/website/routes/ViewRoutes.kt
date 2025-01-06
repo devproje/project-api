@@ -20,6 +20,10 @@ fun Application.viewRoutes() {
 			call.respond(ThymeleafContent("index", mapOf()))
 		}
 
+		get("/skills") {
+			call.respond(ThymeleafContent("skills", mapOf()))
+		}
+
 		get("/history") {
 			call.respond(ThymeleafContent("history", mapOf()))
 		}
