@@ -27,5 +27,9 @@ fun Application.viewRoutes() {
 		get("/history") {
 			call.respond(ThymeleafContent("history", mapOf()))
 		}
+
+		get("/api") {
+			call.respond(ThymeleafContent("api", mapOf()))
+		}
 	}
 }

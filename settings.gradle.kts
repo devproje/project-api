@@ -1,1 +1,1 @@
-rootProject.name = "project-website"
+rootProject.name = "project-api"
