@@ -1,4 +1,4 @@
-package net.projecttl.website
+package net.projecttl
 
 import io.ktor.client.request.*
 import io.ktor.http.*

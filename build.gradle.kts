@@ -6,10 +6,10 @@ plugins {
 }
 
 group = "net.projecttl"
-version = "0.0.1"
+version = "0.1.0"
 
 application {
-    mainClass.set("net.projecttl.website.CoreApplicationKt")
+    mainClass.set("net.projecttl.CoreAppsKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -46,7 +46,7 @@ tasks {
         archiveVersion.set("")
 
         manifest {
-            attributes(Pair("Main-Class", "net.projecttl.website.CoreApplicationKt"))
+            attributes(Pair("Main-Class", "net.projecttl.CoreAppsKt"))
         }
     }
 }

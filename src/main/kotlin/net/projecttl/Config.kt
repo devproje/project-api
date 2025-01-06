@@ -1,4 +1,4 @@
-package net.projecttl.website
+package net.projecttl
 
 import java.io.File
 import java.io.FileInputStream

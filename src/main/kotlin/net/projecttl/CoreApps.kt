@@ -1,10 +1,10 @@
-package net.projecttl.website
+package net.projecttl
 
 import io.ktor.server.application.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
-import net.projecttl.website.routes.apiRoutes
-import net.projecttl.website.routes.viewRoutes
+import net.projecttl.routes.apiRoutes
+import net.projecttl.routes.viewRoutes
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.slf4j.Logger

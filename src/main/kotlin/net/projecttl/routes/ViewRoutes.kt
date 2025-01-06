@@ -1,4 +1,4 @@
-package net.projecttl.website.routes
+package net.projecttl.routes
 
 import io.ktor.server.application.*
 import io.ktor.server.response.*

@@ -1,5 +1,5 @@
 <configuration>
-    <appender name="CORE" class="net.projecttl.website.CoreApplication">
+    <appender name="CORE" class="net.projecttl.CoreApplication">
         <encoder>
             <pattern>%d{YYYY-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
@@ -7,7 +7,7 @@
         <root level="trace">
             <appender-ref ref="CORE" />
         </root>
-        <logger name="net.projecttl.website.CoreApplication" level="info" />
+        <logger name="net.projecttl.CoreApplication" level="info" />
     </appender>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
