@@ -90,20 +90,19 @@
 
 <div class="navigator-item" th:fragment="navigator">
 	<div class="btn-group" role="group">
-		<a type="button" class="btn btn-secondary" href="#top">
+		<div class="btn-group " role="group">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				Pages
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#info">Info</a>
+				<a class="dropdown-item" href="#skills">Skills</a>
+				<a class="dropdown-item" href="#projects">Projects</a>
+				<a class="dropdown-item" href="#history">History</a>
+			</div>
+		</div>
+		<a type="button" class="btn btn-primary" href="#top">
 			<i class="bi bi-arrow-bar-up"></i>
-		</a>
-		<a type="button" class="btn btn-secondary" href="#info">
-			<span>Info</span>
-		</a>
-		<a type="button" class="btn btn-secondary" href="#skills">
-			<span>Skills</span>
-		</a>
-		<a type="button" class="btn btn-secondary" href="#projects">
-			<span>Projects</span>
-		</a>
-		<a type="button" class="btn btn-secondary" href="#history">
-			<span>History</span>
 		</a>
 	</div>
 </div>
