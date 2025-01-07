@@ -8,6 +8,11 @@
 	<link rel="icon" href="/static/favicon.ico" />
 	<link rel="stylesheet" href="/static/css/header.css" />
 	<link rel="stylesheet" href="/static/css/globals.css" />
+
+	<meta th:replace="~{fragments/embed::embed}"
+		  th:with="og_url='${og_url}',
+		  		   og_name='${og_name}',
+		  		   og_description='${og_description}'" />
 </head>
 <body>
 <header th:replace="~{header::header}"></header>

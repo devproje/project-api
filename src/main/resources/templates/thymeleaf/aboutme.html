@@ -10,6 +10,11 @@
 	<link rel="stylesheet" href="/static/css/header.css" />
 	<link rel="stylesheet" href="/static/css/globals.css" />
 	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+	<meta th:replace="~{fragments/embed::embed}"
+		  th:with="og_url='${og_url}',
+		  		   og_name='${og_name}',
+		  		   og_description='${og_description}'" />
 </head>
 <body>
 <div id="top"></div>

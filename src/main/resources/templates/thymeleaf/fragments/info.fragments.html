@@ -79,11 +79,32 @@
 <div id="projects" class="container page" th:fragment="projects">
 	<h2>Projects</h2>
 	<hr class="sk-line" />
+
+	<div class="projects-container">
+		<div class="project-col" th:each="project : ${projects}">
+			<div class="project" th:if="${project.private}">
+				<div class="project-title">
+					<i class="repo-icon bi bi-git"></i>
+					<h4 th:text="${project.name}"></h4>
+				</div>
+				<p th:text="${project.description}"></p>
+			</div>
+			<div class="project" th:unless="${project.private}">
+				<a class="project-link" th:href="${project.url}">
+					<div class="project-title">
+						<i class="repo-icon bi bi-git"></i>
+						<h4 th:text="${project.name}"></h4>
+					</div>
+					<p th:text="${project.description}"></p>
+				</a>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="history" class="container page" th:fragment="history">
-<!--	<h2>History</h2>-->
-<!--	<hr class="sk-line" />-->
+	<h2>History</h2>
+	<hr class="sk-line" />
 
 	<div th:replace="~{fragments/info.fragments::no-conf}"></div>
 </div>
