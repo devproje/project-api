@@ -4,9 +4,33 @@ info:
   description: "⚡ Personal Self-Hosted REST API Service."
   version: "${project.version}"
 servers:
-  - url: "https://projecttl.net"
-#  - url: "http://localhost:3000"
+  - url: "https://projecttl.net/api"
+#  - url: "http://localhost:3000/api" # only use this server when you testing this development server
 paths:
+  /genpass:
+    post:
+      description: "can generate new password"
+      parameters:
+        - in: query
+          name: length
+          schema:
+            type: integer
+          description: "password length (1~50)"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              \$ref: "#/components/schemas/GenPass"
+
+      responses:
+        "301":
+          description: "Created"
+          content:
+            application/json:
+              examples:
+                generated:
+                  value: "{\"ok\":1,\"content\":\"<generated password>\"}"
+
 #  /:
 #    get:
 #      description: "Hello World!"
@@ -19,4 +43,19 @@ paths:
 #                Example#1:
 #                  value: "Hello World!"
 components:
-  schemas: {}
+  schemas:
+    GenPass:
+      type: object
+      properties:
+        uppercase:
+          type: boolean
+          example: true
+        lowercase:
+          type: boolean
+          example: true
+        number:
+          type: boolean
+          example: true
+        special:
+          type: boolean
+          example: true
