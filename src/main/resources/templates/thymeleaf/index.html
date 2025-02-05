@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,8 @@
 <body class="main">
 <header th:replace="~{header::header}"></header>
 
-<main class="container">
-	<div class="center-page">
+<main class="main container">
+	<div class="profile">
 		<img class="profile-image" src="/static/PROJECTU.png" alt="" />
 		<h1 class="profile-title">Project_IO</h1>
 		<div class="profile-items">
@@ -31,14 +31,9 @@
 			<!-- TODO: create contact row items -->
 		</div>
 
-		<div class="btn-group info-btn" role="group">
-			<a type="button" class="btn btn-primary" href="/aboutme">
-				<span>Go to about me</span>
-			</a>
-			<a type="button" class="btn btn-secondary" href="/api">
-				<span><i class="bi bi-plugin"></i></span>
-			</a>
-		</div>
+		<a type="button" class="btn btn-primary info-btn" href="/about">
+			<span>Go to profile</span>
+		</a>
 	</div>
 </main>
 

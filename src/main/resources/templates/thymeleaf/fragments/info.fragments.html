@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
 
 	<div class="skills">
 		<div class="skills-container">
-			<h5>Languages</h5>
+			<h5>Skills</h5>
 			<div class="skill-row">
 				<div class="skill-cell" th:each="lang : ${languages}">
 					<a class="sk-icon" th:href="${lang.url}">
@@ -38,36 +38,6 @@
 						</th:block>
 						<th:block th:unless="${lang.colored}">
 							<i th:class="${lang.icon}"></i>
-						</th:block>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="skills-container">
-			<h5>Frameworks</h5>
-			<div class="skill-row">
-				<div class="skill-cell" th:each="fw : ${frameworks}">
-					<a class="sk-icon" th:href="${fw.url}">
-						<th:block th:if="${fw.colored}">
-							<i th:class="${fw.icon + ' colored'}"></i>
-						</th:block>
-						<th:block th:unless="${fw.colored}">
-							<i th:class="${fw.icon}"></i>
-						</th:block>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="skills-container">
-			<h5>IDE or DevOps</h5>
-			<div class="skill-row">
-				<div class="skill-cell" th:each="do : ${devops}">
-					<a class="sk-icon" th:href="${do.url}">
-						<th:block th:if="${do.colored}">
-							<i th:class="${do.icon + ' colored'}"></i>
-						</th:block>
-						<th:block th:unless="${do.colored}">
-							<i th:class="${do.icon}"></i>
 						</th:block>
 					</a>
 				</div>

@@ -6,8 +6,6 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.thymeleaf.*
 import net.projecttl.model.ProjectSets
-import net.projecttl.model.SkillContainer
-import net.projecttl.model.SkillSets
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 import java.io.File
 
@@ -29,23 +27,29 @@ fun Application.viewRoutes() {
 			)))
 		}
 
-		get("/aboutme") {
-			call.respond(ThymeleafContent("aboutme", mapOf(
-				"og_name" to "Project Website - About Me",
+		get("/about") {
+			call.respond(ThymeleafContent("about", mapOf(
+				"og_name" to "Project Website - About",
 				"og_description" to "Introduce my self page.",
-				"og_url" to "https://projecttl.net/aboutme",
-				"languages" to SkillSets.languages,
-				"frameworks" to SkillSets.frameworks,
-				"devops" to SkillSets.devops,
+				"og_url" to "https://projecttl.net/about",
 				"projects" to ProjectSets.get
 			)))
 		}
 
-		get("/api") {
+		get("/timeline") {
+			call.respond(ThymeleafContent("about", mapOf(
+				"og_name" to "Project Website - Timeline",
+				"og_description" to "Timeline for my personal activity",
+				"og_url" to "https://projecttl.net/timeline",
+				"projects" to ProjectSets.get
+			)))
+		}
+
+		get("/project-api") {
 			call.respond(ThymeleafContent("api", mapOf(
 				"og_name" to "Project API",
 				"og_description" to "⚡ Personal Self-Hosted REST API Service.",
-				"og_url" to "https://projecttl.net/api"
+				"og_url" to "https://projecttl.net/project-api"
 			)))
 		}
 

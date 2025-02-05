@@ -1,3 +1,15 @@
+.navbar {
+    color: var(--foreground);
+    background: var(--background-2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        color: var(--foreground);
+        background: var(--background-2);
+    }
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -5,7 +17,7 @@
 }
 
 .navbar-brand > span {
-    margin: 0 0.25rem;
+    margin: 0 0.5rem;
 }
 
 .navbar-text > a {

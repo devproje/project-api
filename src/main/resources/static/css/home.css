@@ -1,3 +1,9 @@
+.profile {
+    height: 100%;
+    margin: 2rem 0;
+    text-align: center;
+}
+
 .profile-image {
     width: 300px;
     height: 300px;
@@ -14,8 +20,4 @@
 
 .profile-items > * {
     margin: 5px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
 }

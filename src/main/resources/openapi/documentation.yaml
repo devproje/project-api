@@ -7,7 +7,7 @@ servers:
   - url: "https://projecttl.net/api"
 #  - url: "http://localhost:3000/api" # only use this server when you testing this development server
 paths:
-  /genpass:
+  /v1/genpass:
     post:
       description: "can generate new password"
       parameters:

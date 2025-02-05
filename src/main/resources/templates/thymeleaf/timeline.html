@@ -3,11 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Project Website - API</title>
+	<title>Project Website - About Me</title>
 
 	<link rel="icon" href="/static/favicon.ico" />
+	<link rel="stylesheet" href="/static/css/info.css" />
 	<link rel="stylesheet" href="/static/css/header.css" />
 	<link rel="stylesheet" href="/static/css/globals.css" />
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
 	<meta th:replace="~{fragments/embed::embed}"
 		  th:with="og_url='${og_url}',
@@ -15,15 +17,16 @@
 		  		   og_description='${og_description}'" />
 </head>
 <body>
+<div id="top"></div>
 <header th:replace="~{header::header}"></header>
 
 <main class="container">
-	<div class="main center-page">
-		<h1>Project API</h1>
-		<p>⚡ Personal Self-Hosted REST API Service.</p>
+	<div th:replace="~{fragments/info.fragments::headers}"></div>
+	<div th:replace="~{fragments/info.fragments::skills}"></div>
+	<div th:replace="~{fragments/info.fragments::projects}"></div>
+	<div th:replace="~{fragments/info.fragments::history}"></div>
 
-		<a class="btn btn-primary" href="/api/docs">Get started</a>
-	</div>
+	<div th:replace="~{fragments/info.fragments::navigator}"></div>
 </main>
 
 <footer th:replace="~{header::footer}"></footer>
