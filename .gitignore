@@ -6,6 +6,7 @@ build/
 
 ### Ignore Files ###
 bak/
+public/
 config.properties
 !config.sample.properties
 

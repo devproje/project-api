@@ -27,7 +27,6 @@ dependencies {
     implementation(libs.postgresql)
     implementation(libs.exposed.core)
     implementation(libs.exposed.jdbc)
-    implementation(libs.ktor.server.thymeleaf)
     implementation(libs.ktor.server.swagger)
     implementation(libs.ktor.server.cors)
     implementation(libs.ktor.server.host.common)

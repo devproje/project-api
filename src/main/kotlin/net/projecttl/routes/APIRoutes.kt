@@ -39,22 +39,24 @@ fun Application.apiRoutes() {
 				version	= "4.15.5"
 			}
 
-			post("/genpass") {
-				val length = try {
-					Integer.parseInt(call.queryParameters["length"])
-				} catch (ex: Exception) {
-					12
+			route("v1") {
+				post("/genpass") {
+					val length = try {
+						Integer.parseInt(call.queryParameters["length"])
+					} catch (ex: Exception) {
+						12
+					}
+
+					if (length < 1 || length > 50) {
+						call.respond(HttpStatusCode.BadRequest, ErrorResp(errno = "password length must be 1~50"))
+						return@post
+					}
+
+					val opt = call.receive<PasswordOpt>()
+					val password = passwordService.generate(opt, length)
+
+					call.respond(HttpStatusCode.Created, SimpleResp(content = password))
 				}
-
-				if (length < 1 || length > 50) {
-					call.respond(HttpStatusCode.BadRequest, ErrorResp(errno = "password length must be 1~50"))
-					return@post
-				}
-
-				val opt = call.receive<PasswordOpt>()
-				val password = passwordService.generate(opt, length)
-
-				call.respond(HttpStatusCode.Created, SimpleResp(content = password))
 			}
 		}
 	}
