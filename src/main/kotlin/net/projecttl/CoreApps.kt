@@ -4,8 +4,6 @@ import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import net.projecttl.routes.apiRoutes
-import net.projecttl.routes.option
-import net.projecttl.routes.viewRoutes
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.slf4j.Logger
@@ -52,9 +50,7 @@ fun main() {
 }
 
 fun Application.module() {
-	option()
 	apiRoutes()
-	viewRoutes()
 }
 
 class CoreApps

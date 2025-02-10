@@ -14,7 +14,6 @@ ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negoti
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres-version" }
 exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed-version" }
 exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed-version" }
-ktor-server-thymeleaf = { module = "io.ktor:ktor-server-thymeleaf-jvm", version.ref = "ktor-version" }
 ktor-server-swagger = { module = "io.ktor:ktor-server-swagger-jvm", version.ref = "ktor-version" }
 ktor-server-cors = { module = "io.ktor:ktor-server-cors-jvm", version.ref = "ktor-version" }
 ktor-server-host-common = { module = "io.ktor:ktor-server-host-common-jvm", version.ref = "ktor-version" }
