@@ -47,6 +47,8 @@ fun main() {
 		3000
 	}
 
+	// init token
+	SecretToken
     embeddedServer(Netty, port = port, host = "0.0.0.0", module = Application::module)
         .start(wait = true)
 }
