@@ -9,6 +9,7 @@ bak/
 public/
 config.properties
 !config.sample.properties
+system-token.secret
 
 ### STS ###
 .apt_generated
