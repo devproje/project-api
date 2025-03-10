@@ -11,7 +11,8 @@ object SecretToken {
     init {
         if (!file.exists()) {
             file.createNewFile()
-            file.writeText(UUID.randomUUID().toString(), Charsets.UTF_8)
         }
+
+        file.writeText(UUID.randomUUID().toString(), Charsets.UTF_8)
     }
 }

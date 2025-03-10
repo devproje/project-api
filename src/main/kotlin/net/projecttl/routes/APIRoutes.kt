@@ -34,6 +34,12 @@ fun Application.apiRoutes() {
 
 	routing {
 		route("/api") {
+			get("*") {
+				call.respond(HttpStatusCode.NotFound, ErrorResp(
+					errno = "current path '${call.request.uri}' is not found"
+				))
+			}
+
 			swaggerUI(path = "/docs", swaggerFile = "openapi/documentation.yaml") {
 				this.customStyle("/static/css/swagger.css")
 				version	= "4.15.5"
